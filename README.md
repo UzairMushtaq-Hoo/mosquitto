@@ -17,7 +17,7 @@ sudo apt-get -y  install daemon
 sudo apt-get -y  install libwebsockets-dev
 ```
 
-### * Install node js and Node Package Manager
+*### Install node js and Node Package Manager
 ***Installing the corect version of node may have hassle and requires some extra efforts sometiimes. So, firstly, Install node using the following command:***
 ```
 sudo apt-get -y  install nodejs
