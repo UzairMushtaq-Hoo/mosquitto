@@ -43,7 +43,8 @@ curl -sL https://deb.nodesource.com/setup_14.x | bash -
 apt-get install -y nodejs
 ```
 Now, check the version of installed nodejs version by:
-```node -v
+```
+node -v
 ```
 It should be newer now!
 
@@ -104,7 +105,8 @@ make
 sudo make install
 sudo cp mosquitto.conf /etc/mosquitto
 ```
-**Configure ports for mosquitto**
+***Configure ports for mosquitto***
+
 Add the following lines to /etc/mosquitto/mosquitto.conf in the "Default Listener" section:
 Edit:
 ```
@@ -116,7 +118,7 @@ listener 1883
 listener 8080
 protocol websockets
 ```
-**Add user for mosquitto**
+***Add user for mosquitto:***
 ```
 sudo adduser mosquitto
 ```
