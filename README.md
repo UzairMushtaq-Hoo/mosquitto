@@ -17,7 +17,7 @@ sudo apt-get -y  install daemon
 sudo apt-get -y  install libwebsockets-dev
 ```
 
-*### Install node js and Node Package Manager
+### Install node js and Node Package Manager
 ***Installing the corect version of node may have hassle and requires some extra efforts sometiimes. So, firstly, Install node using the following command:***
 ```
 sudo apt-get -y  install nodejs
@@ -48,14 +48,14 @@ node -v
 ```
 It should be newer now!
 
-### * Install Angular
+### Install Angular
 Install the angular cli globally by using `-g` argument:
 ```
 sudo npm install -g @angular/cli@latest
 ```
 
 ## 2. Clone the required repositories
-### *HooOS:
+### HooOS:
 If the user has no root privileges, then use `sudo bash` or you may choose the home directory where the user have enough permissions to read and write.
 `cd ~`
 
@@ -71,7 +71,7 @@ cd HooOS
 sudo npm i
 ```
 
-### *Hoo Backend:
+### Hoo Backend:
 ```
 cd ~
 git clone https://github.com/HooControlsInc/HooBackend.git
@@ -79,7 +79,7 @@ cd HooBackend/
 sudo npm i
 ```
 
-### *zigbee2mqtt:
+### zigbee2mqtt:
 ```
 cd ~
 git clone https://github.com/koenkk/zigbee2mqtt.git
@@ -92,7 +92,7 @@ Download devices.js from Hoo Repo which includes some additional supported devic
 ```
 
 
-### *Install Mosquitto MQTT Broker:
+### Install Mosquitto MQTT Broker:
 Install Mosquitto MQTT Broker with Websockets
 ```
 cd Downloads/
@@ -129,8 +129,6 @@ protocol websockets
 sudo adduser mosquitto
 ```
 
-
-
 ## 3. Run / Test
 Use a separate terminal window/tab for each of the following task:
 
@@ -143,12 +141,16 @@ Move to the directory where zigbee2mqtt was cloned i.e, home: `cd ~/zigbee2mqtt`
 ```
 sudo npm start
 ```
+**If the command ends with error, then try unplug and plug the zigbee dongle**
+If the problem still exists, then try stopping the zigbee2mqtt service by using:
+`sudo systemctl stop zigbee2mqtt.service`
+
 * Now, start the Backend service:
 Navigate to the respective directory: `cd ~/HooBackend/` and run:
 ```
 node server.js
 ```
-* At Last, start the UI by running the following commands:
+* At Last, start the UI by running the following command(s):
 Navigate to `cd ~/HooOS`
 ```
 ng serve --open
@@ -161,7 +163,7 @@ localhost:4200
 
 
 ## 4. Optional : 
-### * Install Google Chrome (Firefox may not support touch functionality):
+### Install Google Chrome (Firefox may not support touch functionality):
 
 
-### * How to change MQTT Broker IP:
+### How to change MQTT Broker IP:
