@@ -18,7 +18,7 @@ sudo apt-get -y  install libwebsockets-dev
 ```
 
 #### Install node js and Node Package Manager
-**Installing the corect version of node may have hassle and requires some extra efforts sometiimes. So, firstly, Install node using the following command:**
+***Installing the corect version of node may have hassle and requires some extra efforts sometiimes. So, firstly, Install node using the following command:***
 ```
 sudo apt-get -y  install nodejs
 ```
@@ -55,13 +55,14 @@ sudo npm install -g @angular/cli@latest
 ```
 
 ### Clone the required repositories
-#### HooOS
+#### HooOS:
 If the user has no root privileges, then use `sudo bash` or you may choose the home directory where the user have enough permissions to read and write.
 `cd ~`
 
 This git repo is private so it may require an authentication if you already haven't logged in.  Before cloning the repository, must check if the repository has been shared with you by HooControlsInc.
 
-```git clone https://github.com/HooControlsInc/HooOS.git
+```
+git clone https://github.com/HooControlsInc/HooOS.git
 ```
 
 Now, download the required node modules:
@@ -70,14 +71,15 @@ cd HooOS
 npm i
 ```
 
-#### Hoo Backend
-```cd ~
+#### Hoo Backend:
+```
+cd ~
 git clone https://github.com/HooControlsInc/HooBackend.git
 cd HooBackend
 npm i
 ```
 
-#### zigbee2mqtt
+#### zigbee2mqtt:
 ```
 cd ~
 git clone https://github.com/koenkk/zigbee2mqtt.git
@@ -87,7 +89,7 @@ npm ci
 ***Now, change the `devices.js` file in  `node_modules\zigbee-herdsman-converters` directory:***
 
 
-#### Install Mosquitto MQTT Broker
+#### Install Mosquitto MQTT Broker:
 Install Mosquitto MQTT Broker with Websockets
 ```
 cd Downloads/
