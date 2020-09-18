@@ -108,6 +108,9 @@ cd mosquitto-1.4.10/
 ```
 sudo nano config.mk
 ```
+now, save & close the file:
+`ctrl + O` & `Enter/Return` to save, and `ctrl + X` to exit.
+
 ***Now, Build mosquitto with following commands:***
 ```
 make
@@ -128,6 +131,9 @@ listener 1883
 listener 8080
 protocol websockets
 ```
+now, save & close the file:
+`ctrl + O` & `Enter/Return` to save, and `ctrl + X` to exit.
+
 ***Add user for mosquitto:***
 ```
 sudo adduser mosquitto
@@ -186,5 +192,7 @@ Navigate to the app folder in HooOS directory and edit `app.module.ts` file:
 cd ~/HooOS/src/app
 sudo nano app.module.ts
 ```
+`ctrl + O` & `Enter/Return` to save, and `ctrl + X` to exit.
+
 and change the ip in `hostname` field.
 
