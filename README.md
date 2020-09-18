@@ -84,7 +84,7 @@ git clone https://github.com/koenkk/zigbee2mqtt.git
 cd zigbee2mqtt
 npm ci
 ```
-**Now, change the `devices.js` file in  `node_modules\zigbee-herdsman-converters` directory:**
+***Now, change the `devices.js` file in  `node_modules\zigbee-herdsman-converters` directory:***
 
 
 #### Install Mosquitto MQTT Broker
@@ -95,11 +95,11 @@ wget http://mosquitto.org/files/source/mosquitto-1.4.10.tar.gz
 tar zxvf mosquitto-1.4.10.tar.gz
 cd mosquitto-1.4.10/
 ```
-**Edit `config.mk` file and replace `WITH_WEBSOCKETS:=no` with `WITH_WEBSOCKETS:=yes`:**
+***Edit `config.mk` file and replace `WITH_WEBSOCKETS:=no` with `WITH_WEBSOCKETS:=yes`:***
 ```
 sudo nano config.mk
 ```
-**Now, Build mosquitto with following commands:**
+***Now, Build mosquitto with following commands:***
 ```
 make
 sudo make install
