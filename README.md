@@ -18,7 +18,7 @@ sudo apt-get -y  install libwebsockets-dev
 ```
 
 ### Install node js and Node Package Manager
-***Installing the corect version of node may have hassle and requires some extra efforts sometiimes. So, firstly, Install node using the following command:***
+***Installing the correct version of node may have hassle and requires some extra efforts sometimes. So, firstly, Install node using the following command:***
 ```
 sudo apt-get -y  install nodejs
 ```
@@ -86,8 +86,8 @@ git clone https://github.com/koenkk/zigbee2mqtt.git
 cd zigbee2mqtt
 npm ci
 ```
-***OPTIONAL: Now, change the `devices.js` file in  `node_modules\zigbee-herdsman-converters` directory:***
-Download devices.js from Hoo Repo which includes some additional supported devices, and replace it with the file in `zigbee2mqtt/node_modules\zigbee-herdsman-converters/devices.js`
+***OPTIONAL: Now, change the `devices.js` file in  `node_modules/zigbee-herdsman-converters` directory:***
+Download devices.js from Hoo Repo which includes some additional supported devices, and replace it with the file in `zigbee2mqtt/node_modules/zigbee-herdsman-converters/devices.js`
 ```
 ```
 
@@ -162,8 +162,25 @@ localhost:4200
 ```
 
 
-## 4. Optional : 
+## 4. Optional
 ### Install Google Chrome (Firefox may not support touch functionality):
-
+Download the latest version of google chrome according to the system's architecture:
+```
+cd ~
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+```
+Install using `dpkg`:
+```
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+```
+Run:
+`google-chrome-stable` or `google-chrome`
 
 ### How to change MQTT Broker IP:
+Navigate to the app folder in HooOS directory and edit `app.module.ts` file:
+```
+cd ~/HooOS/src/app
+sudo nano app.module.ts
+```
+and change the ip in `hostname` field.
+
