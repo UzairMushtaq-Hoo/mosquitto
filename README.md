@@ -18,7 +18,7 @@ sudo apt-get -y  install libwebsockets-dev
 ```
 
 ### Install node js and Node Package Manager
-***Installing the correct version of node may have hassle and requires some extra efforts sometimes. So, firstly, Install node using the following command:***
+***Installing the correct version of node may have hassle and requires some extra efforts sometimes. So, initially, Install node using the following command:***
 ```
 sudo apt-get -y  install nodejs
 ```
@@ -72,9 +72,13 @@ sudo npm i
 ```
 
 ### Hoo Backend:
+clone the repo using:
 ```
 cd ~
 git clone https://github.com/HooControlsInc/HooBackend.git
+```
+and, install the required modules:
+```
 cd HooBackend/
 sudo npm i
 ```
@@ -84,7 +88,7 @@ sudo npm i
 cd ~
 git clone https://github.com/koenkk/zigbee2mqtt.git
 cd zigbee2mqtt
-npm ci
+sudo npm ci
 ```
 ***OPTIONAL: Now, change the `devices.js` file in  `node_modules/zigbee-herdsman-converters` directory:***
 Download devices.js from Hoo Repo which includes some additional supported devices, and replace it with the file in `zigbee2mqtt/node_modules/zigbee-herdsman-converters/devices.js`
