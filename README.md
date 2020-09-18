@@ -1,9 +1,9 @@
-# angieOS - HooControls Documentaion
+# angieOS - HooControls Operating System Documentaion
 
 ## Installation/Setup of HooOS (Dev. Version) guide v0.1:
 This is a guide how to install HooOS v0.1 on Ubuntu/Debian.
 
-## Install all the dependencies
+## 1. Install all the dependencies
 ```
 sudo apt-get -y  update && upgrade
 sudo apt-get -y  install git
@@ -17,7 +17,7 @@ sudo apt-get -y  install daemon
 sudo apt-get -y  install libwebsockets-dev
 ```
 
-### Install node js and Node Package Manager
+### * Install node js and Node Package Manager
 ***Installing the corect version of node may have hassle and requires some extra efforts sometiimes. So, firstly, Install node using the following command:***
 ```
 sudo apt-get -y  install nodejs
@@ -48,14 +48,14 @@ node -v
 ```
 It should be newer now!
 
-### Install Angular
+### * Install Angular
 Install the angular cli globally by using `-g` argument:
 ```
 sudo npm install -g @angular/cli@latest
 ```
 
-## Clone the required repositories
-### HooOS:
+## 2. Clone the required repositories
+### *HooOS:
 If the user has no root privileges, then use `sudo bash` or you may choose the home directory where the user have enough permissions to read and write.
 `cd ~`
 
@@ -68,28 +68,31 @@ git clone https://github.com/HooControlsInc/HooOS.git
 Now, download the required node modules:
 ```
 cd HooOS
-npm i
+sudo npm i
 ```
 
-### Hoo Backend:
+### *Hoo Backend:
 ```
 cd ~
 git clone https://github.com/HooControlsInc/HooBackend.git
-cd HooBackend
-npm i
+cd HooBackend/
+sudo npm i
 ```
 
-### zigbee2mqtt:
+### *zigbee2mqtt:
 ```
 cd ~
 git clone https://github.com/koenkk/zigbee2mqtt.git
 cd zigbee2mqtt
 npm ci
 ```
-***Now, change the `devices.js` file in  `node_modules\zigbee-herdsman-converters` directory:***
+***OPTIONAL: Now, change the `devices.js` file in  `node_modules\zigbee-herdsman-converters` directory:***
+Download devices.js from Hoo Repo which includes some additional supported devices, and replace it with the file in `zigbee2mqtt/node_modules\zigbee-herdsman-converters/devices.js`
+```
+```
 
 
-### Install Mosquitto MQTT Broker:
+### *Install Mosquitto MQTT Broker:
 Install Mosquitto MQTT Broker with Websockets
 ```
 cd Downloads/
@@ -128,3 +131,37 @@ sudo adduser mosquitto
 
 
 
+## 3. Run / Test
+Use a separate terminal window/tab for each of the following task:
+
+* Start by running mqtt broker and specify configuration file with `-c` arg:
+```
+mosquitto -c /etc/mosquitto/mosquitto.conf
+```
+* Start zigbee2mqtt:
+Move to the directory where zigbee2mqtt was cloned i.e, home: `cd ~/zigbee2mqtt` and run:
+```
+sudo npm start
+```
+* Now, start the Backend service:
+Navigate to the respective directory: `cd ~/HooBackend/` and run:
+```
+node server.js
+```
+* At Last, start the UI by running the following commands:
+Navigate to `cd ~/HooOS`
+```
+ng serve --open
+```
+
+After all the above steps, if UI doesn't start then, open the browser tab:
+```
+localhost:4200
+```
+
+
+## 4. Optional : 
+### * Install Google Chrome (Firefox may not support touch functionality):
+
+
+### * How to change MQTT Broker IP:
